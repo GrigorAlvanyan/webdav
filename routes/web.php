@@ -13,7 +13,7 @@
 
 Route::get('/', ['as'=>'home',  'uses'=>'Admin\IndexController@show']); //'middleware'=>'auth',
 
-Route::get('/about/', ['uses'=>'Admin\IndexController@show','as'=>'about']);
+Route::get('/about', ['uses'=>'Admin\AboutController@show','as'=>'about']);
 
 Route::get('/articles', ['uses'=>'Admin\Core@getArticles', 'as'=>'articles']);//->name('articles');
 
