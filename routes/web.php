@@ -13,7 +13,7 @@
 
 Route::get('/', ['as'=>'home',  'uses'=>'Admin\IndexController@show']); //'middleware'=>'auth',
 
-Route::get('/about', ['uses'=>'Admin\AboutController@show','as'=>'about']);
+Route::get('/about', ['uses'=>'AboutController@show','as'=>'about']);
 
 Route::get('/articles', ['uses'=>'Admin\Core@getArticles', 'as'=>'articles']);//->name('articles');
 
@@ -28,3 +28,5 @@ Route::resource('/pages', 'Admin\CoreResource');
 Route::group(['middleware' => ['web']], function () {
 
 });
+
+Route::match(['get', 'post'],'/contact',['uses'=>'Admin\ContactController@show','as'=>'contact']);

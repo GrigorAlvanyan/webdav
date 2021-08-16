@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,11 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        Blade::directive('myDir', function($var) {
+
+            return "<h1>New Directive - $var </h1>";
+
+        });
     }
 
     /**
